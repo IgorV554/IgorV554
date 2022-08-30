@@ -12,6 +12,12 @@ func FF1(x *string) {
 	// узнаем какой тип у переменной pa
 	fmt.Println("Тип переменной указателя: ", fmt.Sprintf("%T", pa)) // тип *string
 }
+func FF2() {
+	var x int = 4
+	p := &x
+	fmt.Println(x)
+	fmt.Println(p)
+}
 
 /* применение
 x := ""
