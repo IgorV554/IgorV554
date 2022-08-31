@@ -56,4 +56,13 @@ func FFvs2() {
 	fmt.Println("age1 (Тип): ", fmt.Sprintf("%T", age1))   // uint8
 	fmt.Println("age1 (Тип): ", fmt.Sprintf("%T", num))    // float64
 	fmt.Println("age1 (Тип): ", fmt.Sprintf("%T", comp))   // complex128
+
+	var m float32 = 10 / 4    // 2
+	var m1 float32 = 10 / 4.0 // 2.5
+	var c int = 35 % 3        // 2 (35 - 33 = 2)
+	const co = 4 / 9          // 0
+	const ci float32 = 4 / 9  // 0
+	const pi float64 = 3.1415926
+	var bl bool = 3 == 5 || 10 > 8        // 3==5 false, 10>8 true, итого || true
+	fmt.Println(m, m1, c, co, ci, pi, bl) // 2 2.5 2 0 0 3.1415926 true
 }
