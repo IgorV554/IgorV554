@@ -29,3 +29,37 @@ func FFcy2() {
 arr:=[...]int{1,2,3,10,20,30}
 cycle.FFcy1(&arr)
 */
+// switch/case с более чем одним условием
+func FFcy3() string { //arg ...[]string)  string {
+	arg := []string{"q", "a", "b", "c", "d", "e"}
+	for _, i := range arg {
+		switch i {
+		case "a":
+			fmt.Println("a: ", i)
+		case "b":
+			fmt.Println("b: ", i)
+		case "c", "d":
+			fmt.Println("cd: ", i)
+		default:
+			{
+				fmt.Println("break: ", i)
+				break
+			}
+		}
+	}
+	return "END"
+}
+
+/* в мэйне:
+s := cycle.FFcy3()
+	fmt.Println(s)
+консоль:
+-------------BEGIN--------------
+break:  q
+a:  a
+b:  b
+cd:  c
+cd:  d
+break:  e
+END
+*/

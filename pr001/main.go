@@ -12,12 +12,15 @@ import (
 			//"pr001/types" s "pr001/VarStruct"
 		vs "pr001/VarStruct"
 		pf "pr001/p_fun"*/
-	vs "pr001/VarStruct"
+	"pr001/cycle"
 )
 
 func main() {
 	fmt.Println("-------------BEGIN--------------")
 	/*x := ""
 	fmt.Scan(&x)*/
-	vs.FFvs5()
+	//arr := []string{"q", "a", "b", "c", "d", "e"}
+	s := cycle.FFcy3()
+	fmt.Println(s)
+
 }
