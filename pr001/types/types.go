@@ -14,7 +14,7 @@ import "fmt"
 type Size int32
 
 func FFt1() {
-	fmt.Printf("----------ТИПЫ/СТРУКТУРЫ-----------")
+	fmt.Printf("----------ТИПЫ-----------")
 	var W, L, H Size = 10, 20, 30
 	{
 		W += +10 // тоже что W += 10 - 20

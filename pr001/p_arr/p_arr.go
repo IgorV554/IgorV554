@@ -15,7 +15,8 @@ numbers2 := [...]int{1,2,3}
 
 срезы:
 numbers := []int{1,2,3,4,5}
-numbers2 := []int{1,2,3}
+numbers := []int{1,2,3}
+var numbers <свой тип> = <свой тип>{1,2,3} - на основе своего типа данных
 */
 
 func FFarr1(mArr *[]int) {

@@ -1,6 +1,8 @@
 package vs
 
-import "fmt"
+import (
+	"fmt"
+)
 
 //go run pr001
 /* Зарезервированные слова:
@@ -67,3 +69,38 @@ func FFvs2() {
 	var bl bool = 3 == 5 || 10 > 8        // 3==5 false, 10>8 true, итого || true
 	fmt.Println(m, m1, c, co, ci, pi, bl) // 2 2.5 2 0 0 3.1415926 true
 }
+
+type Cars struct {
+	Name  string
+	Price int32
+}
+
+/*
+	// инициализируем переменные на основе структуры несколькими способами:
+	//var Car1 vs.Cars; Car1 = vs.Cars{"VAZ", 100} // №1 работает но ругается
+	//var Car1 vs.Cars = vs.Cars{Name: "VAZ2101", Price: 100} // №2 - ОК
+	//var Car1 = vs.Cars{Name: "VAZ", Price: 100} // №3
+	Car1 := vs.Cars{"GGG", 200} // №4 Работает но ругается что не так: vs.Cars{Name: "GGG", Price: 200}
+	fmt.Fprintln(os.Stdout, Car1.Name, ": ", Car1.Price) // можно так вместо Println
+// такой вариант:
+	undefined := vs.Cars{} // выделить память но не иниц-ть
+	fmt.Println(undefined) // почему-то выходит вот это: { 0}
+// еще вариант - вывод почему-то со скобками {}
+	Car1 := vs.Cars{Name: "VAZ", Price: 100}
+	fmt.Println(Car1) // {VAZ 100}
+
+*/
+
+// указатель на структуру
+func FFvs3() {
+	emp := Cars{"ABC", 19078}
+	pts := &emp
+	fmt.Println(pts) // &{ABC 19078}
+	pts.Name = "XYZ"
+	fmt.Println(pts)         // &{XYZ 19078}
+	fmt.Println(*pts)        // {XYZ 19078}
+	fmt.Println(pts.Name)    // XYZ
+	fmt.Println((*pts).Name) // XYZ
+}
+
+/* в мэйне: vs.FFvs3()  */
