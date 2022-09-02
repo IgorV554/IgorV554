@@ -70,9 +70,25 @@ func FFvs2() {
 	fmt.Println(m, m1, c, co, ci, pi, bl) // 2 2.5 2 0 0 3.1415926 true
 }
 
+// Наследование через композицию
+type Father struct {
+	Name string
+}
+
+type Child struct {
+	Father
+	Male string
+}
+
 type Cars struct {
 	Name  string
 	Price int32
+}
+
+// Пример наследования - структура наследник:
+type Tech struct {
+	Cars
+	Type string
 }
 
 /*
@@ -95,12 +111,40 @@ type Cars struct {
 func FFvs3() {
 	emp := Cars{"ABC", 19078}
 	pts := &emp
-	fmt.Println(pts) // &{ABC 19078}
+	fmt.Println(pts) //  &{ABC 19078}
 	pts.Name = "XYZ"
+	//
 	fmt.Println(pts)         // &{XYZ 19078}
 	fmt.Println(*pts)        // {XYZ 19078}
-	fmt.Println(pts.Name)    // XYZ
 	fmt.Println((*pts).Name) // XYZ
+	fmt.Println(pts.Name)    // XYZ
+	fmt.Println(emp.Name)    // XYZ
+	emp.Name = "DDD"
+	fmt.Println(emp.Name) // DDD
+	fmt.Println(pts.Name) // DDD
+	//
 }
 
 /* в мэйне: vs.FFvs3()  */
+func FFvs4() {
+	// базовая
+	c := new(Father)
+	c.Name = "Петя"
+	fmt.Println(c.Name) // Петя
+	// дочерняя
+	d := new(Child)
+	d.Name = "Вася"
+	fmt.Println(d.Name) // Вася
+	// новые поля в дочерней
+	d.Male = "муж"
+	fmt.Println(d.Name, d.Male)
+}
+
+// наследование
+func FFvs5() {
+	s := new(Tech) // дочерняя от Cars
+	s.Name = "GAZ"
+	s.Price = 300
+	s.Type = "Legk"
+	fmt.Println(s.Name, s.Price, s.Type) // GAZ 300 Legk
+}
