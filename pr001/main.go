@@ -12,8 +12,9 @@ import (
 			//"pr001/types" s "pr001/VarStruct"
 		vs "pr001/VarStruct"
 		pf "pr001/p_fun"
-		"pr001/cycle"*/
-	pf "pr001/p_fun"
+		"pr001/cycle"
+		"pr001/inf"*/
+	"pr001/inf"
 )
 
 func main() {
@@ -22,9 +23,5 @@ func main() {
 	fmt.Scan(&x)*/
 	//arr := []string{"q", "a", "b", "c", "d", "e"}
 	//pf.FF7()
-
-	f := pf.Fsquare(2) // рекурсия
-	fmt.Println(f())   // 9
-	fmt.Println(f())   // 16
-	fmt.Println(f())   // 25
+	inf.Finf01()
 }
