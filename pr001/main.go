@@ -23,5 +23,18 @@ func main() {
 	fmt.Scan(&x)*/
 	//arr := []string{"q", "a", "b", "c", "d", "e"}
 	//pf.FF7()
-	inf.Finf01()
+	//
+	d := inf.Dat{}
+	fmt.Println(d.Str()) // Результат выполнения:
+	//
+	m := inf.Mat{N1: 10, N2: 10}
+	// Это работает и без объявления интерфейса
+	fmt.Println(m)       // {10 10}
+	fmt.Println(m.Add()) // 20
+	fmt.Println(m.Sub()) // 0
+	fmt.Println(m.Mul()) // 100
+	fmt.Println(m.Div()) // 1
+	//
+	e := inf.End{}
+	fmt.Println(e.Str()) // Конец операции
 }
